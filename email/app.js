@@ -20,6 +20,11 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+// endpoint to test
+app.get('/', (req, res) => {
+  res.status(200).json('API is running');
+});
+
 // API endpoint to send email
 app.post('/send-email', async (req, res) => {
   const { email } = req.body;
